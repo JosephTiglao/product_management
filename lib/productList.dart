@@ -10,19 +10,20 @@ class Config {
 
 class Products extends ChangeNotifier {
   // final List<Product> _products = [Product("12", "Ink", "12")];
-  Realm realm = Config.realmGenerate();
+  // Realm realm = Config.realmGenerate();
 
-  // RealmResults<Product> get items {
-  //   var realm = Config.realmGenerate();
-  //   return realm.all<Product>();
-  // }
+  RealmResults<Product> get items {
+    var realm = Config.realmGenerate();
+    return realm.all<Product>();
+  }
 
-  late RealmResults<Product> _products = realm.all<Product>();
+  // RealmResults<Product> _products = realm.all<Product>();
 
-  RealmResults<Product> get items => _products;
+  // RealmResults<Product> get items => _products;
 
   void add(Product p) {
     // _products.add(p);
+    var realm = Config.realmGenerate();
     realm.write(() {
       realm.add(p);
     });
@@ -30,10 +31,11 @@ class Products extends ChangeNotifier {
   }
 
   void toggle(int index) {
-    _products[index].isFav = !_products[index].isFav;
-    notifyListeners();
+    //   var realm = Config.realmGenerate();
+    //   _products[index].isFav = !_products[index].isFav;
+    //   notifyListeners();
+    // }
   }
-}
 
 // class Product {
 //   late String code;
@@ -47,4 +49,4 @@ class Products extends ChangeNotifier {
 //     required this.price,
 //     this.isFav = false,
 //   });
-// }
+}
