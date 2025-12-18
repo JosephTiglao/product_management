@@ -1,6 +1,6 @@
 # labwork
 
-A new Flutter project.
+This assignment focuses on basic product management concepts. The product is a proposed mobile application designed to solve a simple real-world problem.
 
 ## Getting Started
 
